@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Factura y Margen Real</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>📦 Calculadora de Factura y Margen Real</h1>
+
+    <!-- FORMULARIO FACTURA -->
+    <form id="facturaForm">
+      <h2>Datos de la Factura</h2>
+
+      <div class="field">
+  <label>Transporte Total</label>
+  <input type="number" step="0.01" id="transporteTotal" required />
+      </div>
+
+      <div class="field">
+  <label>IVA (%)</label>
+  <input type="number" step="0.01" id="ivaPorcentaje" required />
+      </div>
+
+      <div class="field">
+  <label>Subtotal</label>
+  <input type="number" step="0.01" id="subtotal" required />
+      </div>
+
+      <div class="field">
+  <label>IVA Total Factura</label>
+  <input type="number" step="0.01" id="ivaTotalFactura" required />
+      </div>
+
+      <h3>Productos</h3>
+      <div id="productosContainer"></div>
+
+      <button type="button" id="agregarProducto" class="add-btn">+ Agregar producto</button>
+
+      <button type="submit" class="calc-btn">Calcular Factura</button>
+    </form>
+
+    <section id="resultadosFactura"></section>
+
+    <hr />
+
+    <!-- SECCIÓN MARGEN REAL -->
+    <form id="margenForm">
+      <h2>Calcular Margen Real</h2>
+
+      <div class="field">
+  <label>Precio Venta (con IVA)</label>
+  <input type="number" id="precioVentaConIVA" required />
+      </div>
+
+      <div class="field">
+  <label>Costo Compra Neto</label>
+  <input type="number" id="costoCompraNeto" required />
+      </div>
+
+      <div class="field">
+  <label>IVA Compra Real (%)</label>
+  <input type="number" id="ivaCompraRealPorcentaje" step="any" required />
+      </div>
+
+      <div class="field">
+  <label>IVA Venta (%)</label>
+  <input type="number" id="ivaVentaPorcentaje" required />
+      </div>
+
+      <button type="submit" class="calc-btn">Calcular Margen</button>
+    </form>
+
+    <section id="resultadoMargen"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
